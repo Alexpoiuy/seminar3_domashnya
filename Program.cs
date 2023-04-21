@@ -1,63 +1,55 @@
-﻿// Задача 23. Напишите программу, которая принимает на вход число (N) 
-// и выдаёт таблицу кубов чисел от 1 до N.
+﻿//Задача 25: Напишите цикл, который принимает на вход два числа 
+// (A и B) и возводит число A в натуральную степень B.
 /*
-void TablKub(int N)
+void stepen (int num1, int step)
 {
-    int count = 1;
-    while(count <= N)
+    double result = Math.Pow(num1, step);
+    Console.WriteLine(result);
+}
+
+Console.WriteLine("Введите первое число");
+int num1 = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Введите число два - степень");
+int step = Convert.ToInt32(Console.ReadLine());
+
+Console.Write($"Число {num1} в степени {step} равняется ");
+stepen(num1, step);
+*/
+// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+
+/*
+int summa(int num)
+{
+    int result = 0;
+    while(num > 0)
     {
-        Console.WriteLine($"куб {count} составляет - {count*count*count} ");
-        count++;
+        result += num % 10;
+        num = num / 10;
     }
+    return result;
 }
 
-Console.Write("Введи значение: ");
+Console.WriteLine("Введите число");
 int num = Convert.ToInt32(Console.ReadLine());
-TablKub(num);
-*/
-// Задача 19. Напишите программу, которая принимает на вход пятизначное число
-// и проверяет, является ли оно палиндромом.
-/*
-Console.WriteLine("Введите пятизначное число: ");
-string number = Console.ReadLine();
-int len = number.Length; 
 
-if (len == 5)
+int result = summa(num);
+Console.Write($"Сумма цифр числа {num} равняется {result}");
+*/
+// Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+using System;
+
+class Program
 {
-    if (number[0] == number[4] && number[1] == number[3])
-    { 
-        Console.WriteLine($"{number} - Палиндром");
-    } 
-    else 
-    { 
-        Console.WriteLine($"{number} - НЕ палиндром");
+    static void Main()
+    {
+        int[] array = new int[8] { 1, 2, 3, 4, 5, 6, 7, 8 };
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.WriteLine(array[i]);
+        }
+
+        Console.ReadKey();
     }
 }
-else
-{ 
-    Console.WriteLine($"ОШИБКА: {number} - не является пятизначным");
-}
-*/
-// Напишите программу, которая принимает на вход координаты 
-// двух точек и находит расстояние между ними в 3D пространстве.
-/*
-int x1 = ReadInt("Введите координату X первой точки: ");
-int y1 = ReadInt("Введите координату Y первой точки: ");
-int z1 = ReadInt("Введите координату Z первой точки: ");
-int x2 = ReadInt("Введите координату X второй точки: ");
-int y2 = ReadInt("Введите координату Y второй точки: ");
-int z2 = ReadInt("Введите координату Z второй точки: ");
-
-int A = x2 - x1;
-int B = y2 - y1;
-int C = z1 - z2;
-
-double length = Math.Sqrt(A * A + B * B + C * C);
-Console.WriteLine($"Длинна отрезка {length}");
-
-int ReadInt(string message)
-{
-    Console.Write(message); 
-    return Convert.ToInt32(Console.ReadLine());
-}
-*/
